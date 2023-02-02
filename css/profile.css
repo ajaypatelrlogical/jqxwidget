@@ -1,0 +1,115 @@
+.inner_zoola_contentxc.profilesetclass .card-body {
+    padding: 0; 
+}
+.card_zoola_header .all_in_one_rightside ul .btn_newzoola_sm_blue.btn_newzoola_sm_red {
+    padding: 0 16px !important;
+}
+.inner_zoola_contentxc.profilesetclass .foreditableview a {
+    display: none !important;
+}
+.all_action_dropbox .dropdown>a {
+    border: 1px solid transparent !important;
+}
+.card-body .row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.inner_zoola_contentxc .card_zoola_header {
+    padding: 10px 18px;
+}
+@media only screen and (max-width: 1501px) {
+    .inner_zoola_contentxc.profilesetclass .col-sm-3 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+@media only screen and (max-width: 1280px) {
+    .inner_zoola_contentxc.profilesetclass .col-sm-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .inner_zoola_contentxc.profilesetclass .col-sm-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .profile .wrapper.mobile-edit-detail {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+    .mobile-edit-detail .floating_action_button {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 0;
+        z-index: 1111;
+    }   
+    .search_main_body .wrapper.mobile-edit-detail .content {
+        width: 100% !important;
+        top: 80px;
+        overflow-y: auto !important;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        /* -webkit-overflow-scrolling: touch; */
+    }
+    .mobile-edit-detail .hide_mobile_edit {
+        visibility: hidden;
+    }
+    .foreditableview .floating_label {
+        opacity: 0.8 !important;
+    }
+    .inner_zoola_contentxc.profilesetclass .col-sm-3 {
+        flex: auto;
+        max-width: 100%;
+    }
+    .all_action_dropbox .dropdown-menu {
+        min-width: 180px;
+    }
+    .all_action_dropbox .dropdown .dropdown-item {
+        font-size: 16px !important;
+    }
+    .inner_zoola_contentxc.profilesetclass .card-body {
+        padding: 15px 0 20px !important; 
+    }
+    .inner_zoola_contentxc.profilesetclass .floating_label_input.foreditableview {
+        padding: 5px 15px !important;
+    }
+    .inner_zoola_contentxc.profilesetclass .row [class*="col-"]:last-child .floating_label_input.foreditableview {
+        border: none !important;
+    } 
+    .inner_zoola_contentxc.profilesetclass .all_in_one_rightside {
+        padding: 7px 0 0 0;
+    }
+    html {
+        overflow: hidden !important;
+    }
+    body.search_main_body {
+        overflow: hidden !important;
+    }
+    .inner_zoola_contentxc.profilesetclass .floating_label_input.foreditableview {       
+        border: none !important;
+        border-bottom: 1px solid #e3e7e9 !important;
+        border-radius: 0 !important;
+    }
+    .mobile-edit-detail .inner_zoola_contentxc.profilesetclass  .floating_label_input.foreditableview {
+        border-bottom: 1px solid transparent !important;
+    }       
+    .inner_zoola_contentxc.profilesetclass .row {
+        margin: 0 !important;
+        float: left;
+        width: 100%;
+    }
+    .inner_zoola_contentxc.profilesetclass .row [class*="col-"] {
+        padding: 0 !important;
+    }
+    .inner_zoola_contentxc .card_zoola_header {
+        padding: 15px 20px 10px !important;
+    }
+}
+
