@@ -64,7 +64,7 @@ $(document).ready(function () {
                         </div></div></div>");
                         $(htmlElement).append(button);
 
-                        $('.dropdown').on('shown.bs.dropdown', function () {
+                        $('.dropdown').on('show.bs.dropdown', function () {
                             const dropdown = $(this);
                             setTimeout(function () {
                                 dropdown.find('.dropdown-menu').css({ 'top': dropdown.offset().top - $(window).scrollTop(), 'left': dropdown.offset().left - $(window).scrollLeft(), 'position': 'fixed' });
