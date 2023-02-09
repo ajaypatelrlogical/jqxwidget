@@ -63,6 +63,23 @@
 				<div class="card-body-inner">
 					<div class="jqx-main-cls">
 						<div id="grid"></div>
+						<div id='tabs' style="display: none;">
+					        <ul>
+					            <li style="margin-left: 30px;">
+					                Login History
+					            </li>
+					            <li>
+					                Email History
+					            </li>
+					        </ul>
+					        <div style="overflow: hidden;">
+					            <div style="border:none;" id="loginHistoryGrid">
+					            </div>
+					        </div>
+					        <div style="overflow: hidden;">
+					            <div style="border:none;" id="emailHistoryGrid"></div>
+					        </div>
+					    </div>
 				    </div>
 				</div>
 			</div>
@@ -125,7 +142,7 @@
 <script type="text/javascript" src="./jqwidgets/jszip.min.js"></script>
 <!-- For Export --><!-- jqxGrid JS End -->
 
-<script type="text/javascript" src="./js/page_grid.js"></script>
+<script type="text/javascript" src="./js/profile.js"></script>
 
 </body>
 </html>

@@ -71,7 +71,9 @@ function jqxGridHeaderAction(jqxGridID) {
     });
 
     $('body').on('click', jqxGridID+'_excelExport', function() {
-        $(jqxGridID).jqxGrid('exportdata', 'xlsx', exportFileName);           
+    	$('#elements_styling').attr('href','')
+		$(jqxGridID).jqxGrid('exportdata', 'xlsx', exportFileName);  
+		$('#elements_styling').attr('href','./css/elements.css')         
     });
     $('body').on('click', jqxGridID+'_csvExport', function() {
         $(jqxGridID).jqxGrid('exportdata', 'csv', exportFileName);
