@@ -63,23 +63,17 @@
 				<div class="card-body-inner">
 					<div class="jqx-main-cls">
 						<div id="grid"></div>
-						<div id='tabs' style="display: none;">
-					        <ul>
-					            <li style="margin-left: 30px;">
-					                Login History
-					            </li>
-					            <li>
-					                Email History
-					            </li>
-					        </ul>
-					        <div style="overflow: hidden;">
-					            <div style="border:none;" id="loginHistoryGrid">
-					            </div>
-					        </div>
-					        <div style="overflow: hidden;">
-					            <div style="border:none;" id="emailHistoryGrid"></div>
-					        </div>
-					    </div>
+						<div style='margin-top: 20px;'>
+				            <div style='float: left;'>
+				                <input type="button" value="Export to Excel" id='excelExport' />
+				            </div>
+				            <div style='margin-left: 10px; float: left;'>
+				                <input type="button" value="Export to XML" id='xmlExport' />
+				            </div>
+				            <div style='margin-left: 10px; float: left;'>
+				                <input type="button" value="Export to CSV" id='csvExport' />
+				            </div>
+				        </div>
 				    </div>
 				</div>
 			</div>

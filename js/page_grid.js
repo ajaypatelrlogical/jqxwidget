@@ -56,11 +56,29 @@ $(document).ready(function () {
                 {
                     text: 'Picture', sortable: false, filterable: false, editable: false,
                     groupable: false, draggable: false, resizable: false, dataField: '', width: '10%',
-                    createwidget: function (row, column, value, htmlElement) {
+                    /*createwidget: function (row, column, value, htmlElement) {
+                        var datarecord = value;
+                        var imgurl = '../../images/' + value.toLowerCase() + '.png';
+                        var img = '<img style="margin-top: 8px;" height="50" width="40" src="' + imgurl + '"/>';
+                        var button = $("<div style='border:none;'>" + img + "<div class='buttonValue'>" + value + "</div></div>");
+                        $(htmlElement).append(button);
+                        button.jqxButton({ template: "success", height: '100%', width: '100%' });
+                        button.click(function (event) {
+                            var clickedButton = button.find(".buttonValue")[0].innerHTML;
+                            alert(clickedButton);
+                        });
+                      },
+                    initwidget: function (row, column, value, htmlElement) {
+                        var imgurl = '../../images/' + value.toLowerCase() + '.png';
+                        $(htmlElement).find('.buttonValue')[0].innerHTML = value;
+                        $(htmlElement).find('img')[0].src = imgurl;
+                    }*/
+                    /*createwidget: function (row, column, value, htmlElement) {
+                        var rowData = row.bounddata;
                         var button = $("<div style='border:none;'><div class='dropdown'><button class='btn btn-secondary dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'></button>\
                         <div class='dropdown-menu dropdown-menu-right'>\
-                            <a href='javascript:;' target='_blank' class='dropdown-item'>View Detail</a>\
-                            <a href='javascript:;' target='_blank' class='dropdown-item'>Edit Detail</a>\
+                            <a href='javascript:;' target='_blank' class='dropdown-item'>View Detail "+rowData.name+"</a>\
+                            <a href='javascript:;' target='_blank' class='dropdown-item'>Edit Detail "+rowData.name+"</a>\
                         </div></div></div>");
                         $(htmlElement).append(button);
 
@@ -68,10 +86,25 @@ $(document).ready(function () {
                     },
                     initwidget: function (row, column, value, htmlElement) {
 
-                    }
+                    }*/
                 },
                 { text: 'Name', datafield: 'name', width: 200 },
-                { text: 'Title', datafield: 'title', width: 200 },
+                { text: 'Title', datafield: 'title', width: 200,
+                    createwidget: function (row, column, value, htmlElement) {
+                        var button = $("<div style='border:none;'><div class='dropdown'><button class='btn btn-secondary dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'></button>\
+                        <div class='dropdown-menu dropdown-menu-right'>\
+                        </div></div></div>");
+                        $(htmlElement).append(button);
+                        var html = "<a href='javascript:;' target='_blank' class='dropdown-item'>"+value+"</a>";
+                        $(htmlElement).find('.dropdown-menu')[0].innerHTML = html;
+
+                        appendDropDownMenuToBody();
+                    },
+                    initwidget: function (row, column, value, htmlElement) {
+                        var html = "<a href='javascript:;' target='_blank' class='dropdown-item'>"+value+"</a>";
+                        $(htmlElement).find('.dropdown-menu')[0].innerHTML = html;
+                    }
+                },
                 { text: 'Country', datafield: 'country' }
             ]
         });
