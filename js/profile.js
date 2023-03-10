@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var url = 'nasdaq_vs_sp500.txt';
     var source =
@@ -13,44 +13,49 @@ $(document).ready(function() {
     };
     var dataAdapter = new $.jqx.dataAdapter(source);
     $("#grid").jqxGrid(
-    {
-        width: '100%',
-        source: dataAdapter,
-        columnsresize: true,
-        columns: [
-          { text: 'Date', datafield: 'Date', cellsformat: 'D', width: 250},
-          { text: 'S&P 500', datafield: 'S&P 500', width: 300, cellsformat: 'f' },
-          { text: 'NASDAQ', datafield: 'NASDAQ', cellsformat: 'f' }         
-        ]
-    });
+        {
+            width: '100%',
+            source: dataAdapter,
+            columnsresize: true,
+            columns: [
+                { text: 'Date', datafield: 'Date', cellsformat: 'D', width: 250 },
+                { text: 'S&P 500', datafield: 'S&P 500', width: 300, cellsformat: 'f' },
+                { text: 'NASDAQ', datafield: 'NASDAQ', cellsformat: 'f' }
+            ]
+        });
 
     $("#excelExport").jqxButton();
     $("#xmlExport").jqxButton();
     $("#csvExport").jqxButton();
 
- 	$("#excelExport").click(function () {
-        $("#grid").jqxGrid('exportdata', 'xlsx', 'jqxGrid');           
+    $("#excelExport").click(function () {
+        $('#grid').jqxGrid('showloadelement');
+        let file = $("#grid").jqxGrid('exportdata', 'xls', null);
+        downloadFile(file, 'grid.xls');
+        setTimeout(() => {
+            $('#grid').jqxGrid('hideloadelement');
+        }, 400)
     });
     $("#xmlExport").click(function () {
-    	$('#grid').jqxGrid('showloadelement');
-	    let file = $("#grid").jqxGrid('exportdata', 'xls', null);
-	    downloadFile(file, 'grid.xls');
-	    $('#grid').jqxGrid('hideloadelement');
+        $('#grid').jqxGrid('showloadelement');
+        let file = $("#grid").jqxGrid('exportdata', 'xml', null);
+        downloadFile(file, 'grid.xml');
+        setTimeout(() => {
+            $('#grid').jqxGrid('hideloadelement');
+        }, 400)
     });
     $("#csvExport").click(function () {
-        $("#grid").jqxGrid('exportdata', 'csv', 'jqxGrid');
+        $('#grid').jqxGrid('showloadelement');
+        let file = $("#grid").jqxGrid('exportdata', 'csv', null);
+        downloadFile(file, 'grid.csv');
+        setTimeout(() => {
+            $('#grid').jqxGrid('hideloadelement');
+        }, 400)
     });
 });
 
-$("#excelExport").click(function () {
-    $('#grid').jqxGrid('showloadelement');
-    let file = $("#grid").jqxGrid('exportdata', 'xls', null);
-    downloadFile(file, 'grid.xls');
-    $('#jqxGrid').jqxGrid('hideloadelement');
-});
-
-function downloadFile(xml, name = 'grid.xls') {
-    var blob = new Blob([xml], {type: 'text/plain'});
+function downloadFile(file, name = 'grid') {
+    var blob = new Blob([file], { type: 'text/plain' });
     const blobUrl = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = blobUrl;
